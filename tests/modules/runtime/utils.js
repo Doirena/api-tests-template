@@ -41,4 +41,12 @@
     return date.getTime();
   };
 
+/*Random country code iso*/
+exports.randomCountryCodeIso = function () {
+  let countryCodyList = ["LR","LS","LT","LU","LV","LY","MA","MC","MD","ME","MF","MG","MH"];
+  let ranNumber =Math.floor(Math.random()*countryCodyList.length);
+  return countryCodyList[ranNumber];
+}
+
+
 })();

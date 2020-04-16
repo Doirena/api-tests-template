@@ -10,12 +10,12 @@ chai.use(chaiHttp);
   let data = settings.runtimeData;
 
   /**
-  * get request example.
+  * get deals request
   */
-  exports.getRequest = async function (query) {
+  exports.get = async function (query) {
     query = query;
     return await chai.request(env.urlApi)
-      .get(`/get${query}`)
+      .get(`/mth/v1/users/deals${query}`)
       .set('content-type', 'application/json')
       .set('Authorization', data.global.Authorization)
       .send();
@@ -23,7 +23,7 @@ chai.use(chaiHttp);
 
   /**
   * post request example.
-  */
+  
   exports.postRequest = async function () {
     return await chai.request(env.urlApi)
       .post('/post')
@@ -39,10 +39,10 @@ chai.use(chaiHttp);
         }
       );
   };
-
+*/
   /**
   * put request example.
-  */
+  
   exports.putRequest = async function () {
     return await chai.request(env.urlApi)
       .put('/put')
@@ -58,10 +58,10 @@ chai.use(chaiHttp);
         }
       );
   };
-
+  */
   /**
   * patch request example.
-  */
+ 
   exports.patchRequest = async function () {
     return await chai.request(env.urlApi)
       .patch('/patch')
@@ -77,10 +77,10 @@ chai.use(chaiHttp);
         }
       );
   };
-
+ */
   /**
   * delete request example.
-  */
+
  exports.deleteRequest = async function () {
   return await chai.request(env.urlApi)
     .delete('/delete')
@@ -92,5 +92,5 @@ chai.use(chaiHttp);
       }
     );
 };
-
+*/
 })();
