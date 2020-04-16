@@ -116,6 +116,20 @@ describe('DEALS', function () {
       expect(response.body.message).to.equal(`(601) offset in query must be of type int64: "${offset}"`);
     });
 
+    it('Should not be able to get deals when offset is invalid random', async function () {
+      // Given
+      let offset=utils.randomString(20, '5456llkjhgfsgf');
+      
+      const query = `?deal_type=active&is_trashed=false&offset=${offset}&limit=1`;
+      // When
+      let response = await deal.get(query);
+      // Then
+      expect(response.statusCode).to.equal(400);
+      expect(response.body).to.have.property('code');
+      expect(response.body.code).to.equal('VALIDATION_ERROR');
+      expect(response.body.message).to.equal(`(601) offset in query must be of type int64: "${offset}"`);
+    });
+
     it('Should not be able to get deals when Authorization is invalid', async function () {
       // Given
       let authorization=data.global.Authorization;
