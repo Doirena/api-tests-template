@@ -31,9 +31,8 @@
   exports.randomContCode = function () {
     var countryCodes = Array("LT", "EE", "EN", "BM", "BT");
     var randomCCode;
-    return (
-      randomCCode = countryCodes[Math.floor(Math.random() * countryCodes.length)];
-    );
+    return (randomCCode =
+      countryCodes[Math.floor(Math.random() * countryCodes.length)]);
   };
 
   /**
